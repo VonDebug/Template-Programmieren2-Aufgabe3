@@ -1,30 +1,34 @@
 package org.htw.prog2.aufgabe1.files;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class SequenceFile implements HIVFile {
+
+    LinkedHashSet<String> orderedSequences = new LinkedHashSet<>();
 
     public SequenceFile(){
 
     }
 
     public void addSequence(String sequence){
-
+        orderedSequences.add(sequence);
     }
 
-    public HashSet<String> getSequence(){
+    public HashSet<String> getSequences(){
 
-        return new HashSet<>();
+
+        return new HashSet<>(orderedSequences);
     }
 
     public String getFirstSequence(){
 
-        return "";
+        return orderedSequences.iterator().next();
     }
 
     public int getNumberOfSequences(){
 
-        return 0;
+        return orderedSequences.size();
     }
 
 }
