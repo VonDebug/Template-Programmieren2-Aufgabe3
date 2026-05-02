@@ -73,10 +73,6 @@ public class FASTAFileReader implements SequenceFileReader {
     @Override
     public boolean canReadFile(String filename) {
 
-        return validator(filename);
-    }
-
-    private boolean validator(String filename){
         boolean lastLineWasHeader = false;
         boolean hasSequenceContent = false;
 
@@ -109,6 +105,7 @@ public class FASTAFileReader implements SequenceFileReader {
         hasSequenceContent = true;
 
         return hasSequenceContent;
+
     }
 
 }
