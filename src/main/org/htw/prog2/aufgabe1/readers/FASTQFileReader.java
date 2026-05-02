@@ -8,6 +8,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FASTQFileReader implements SequenceFileReader{
+
+
+
     @Override
     public SequenceFile readFile(String filename) throws IOException, FileFormatException {
 

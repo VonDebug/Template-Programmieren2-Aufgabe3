@@ -11,10 +11,6 @@ import java.io.IOException;
 
 public class FASTAFileReader implements SequenceFileReader {
 
-
-
-
-
     @Override
     public SequenceFile readFile(String filename) throws IOException, FileFormatException {
 
