@@ -104,4 +104,6 @@ public class FASTAFileReader implements SequenceFileReader {
 
     }
 
+
+
 }

@@ -113,4 +113,9 @@ public class FASTQFileReader implements SequenceFileReader{
         return hasSequenceContent;
 
     }
+
+
+
+
+
 }
