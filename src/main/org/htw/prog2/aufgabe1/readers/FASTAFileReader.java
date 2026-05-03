@@ -69,38 +69,7 @@ public class FASTAFileReader implements SequenceFileReader {
     @Override
     public boolean canReadFile(String filename) {
 
-        boolean lastLineWasHeader = false;
-        boolean hasSequenceContent = false;
-
-        try(BufferedReader in = new BufferedReader(new FileReader(filename))){
-            String line;
-            int lineCounter = 0;
-
-            while((line = in.readLine()) != null){
-                lineCounter ++;
-
-                if(line.startsWith(">")){
-
-                    if(lastLineWasHeader){
-                        throw new FileFormatException("The last line is a sequence header.");
-                    }
-
-                    lastLineWasHeader = true;
-
-                }
-
-                else if(lineCounter == 1){
-                    throw new FileFormatException("FASTA File does not start with sequence header line.");
-                }
-            }
-
-        } catch (Exception e) {
-            return hasSequenceContent;
-        }
-
-        hasSequenceContent = true;
-
-        return hasSequenceContent;
+        return filename.endsWith(".fasta");
 
     }
 

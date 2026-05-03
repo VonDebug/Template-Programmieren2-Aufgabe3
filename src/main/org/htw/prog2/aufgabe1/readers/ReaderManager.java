@@ -19,18 +19,12 @@ public class ReaderManager <T extends HIVFileReader> {
     public T getReaderForFile(String filename)throws NoValidReadersException {
 
         for (T fileReader : readers) {
-            try {
-                fileReader.canReadFile(filename);
-                {
-                    return fileReader;
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            if(fileReader.canReadFile(filename)){
+                return fileReader;
             }
 
-        }
+        }throw new NoValidReadersException();
 
-     return null;
     }
 
 }

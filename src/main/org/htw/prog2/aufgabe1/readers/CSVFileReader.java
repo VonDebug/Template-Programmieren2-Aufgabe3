@@ -113,6 +113,6 @@ public class CSVFileReader implements MutationFileReader{
 
     @Override
     public boolean canReadFile(String filename) {
-        return false;
+        return filename.endsWith(".csv");
     }
 }
